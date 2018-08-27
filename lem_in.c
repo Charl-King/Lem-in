@@ -29,10 +29,17 @@ t_line	*create(char *data, t_line *next)
 t_line	*append(t_line *head, char *data)
 {
 	t_line *cursor = head;
-	while(cursor->next != NULL)
+	if (!cursor)
+	{
+		create(data, NULL);
+	}
+	else
+	{
+		while(cursor->next != NULL)
 		cursor = cursor->next;
-	t_line* new_node =  create(data,NULL);
-	cursor->next = new_node;
+		t_line* new_node =  create(data,NULL);
+		cursor->next = new_node;
+	}
 	return (head);
 }
 

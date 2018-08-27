@@ -24,7 +24,7 @@ OBJ= $(SRC:.c=.o)
 
 $(NAME):
 		gcc -Wall -Werror -Wextra -c $(SRC)
-		gcc -o $(NAME) $(OBJ) -L ./libft/libft.a
+		gcc -o $(NAME) $(OBJ) ./libft/libft.a
 
 clean:
 		rm -f *.o
