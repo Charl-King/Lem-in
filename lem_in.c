@@ -33,7 +33,7 @@ t_line	*append(t_line *head, char *data)
 		cursor = cursor->next;
 	t_line* new_node =  create(data,NULL);
 	cursor->next = new_node;
-	return head;
+	return (head);
 }
 
 int		main(void)

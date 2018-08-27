@@ -20,5 +20,6 @@ typedef struct	s_line
 	char			*data;
 	struct	s_line	*next;
 }				t_line;
+
 void	error	(int x);
 #endif

@@ -22,9 +22,9 @@ SRC= error.c lem_in.c
 
 OBJ= $(SRC:.c=.o)
 
-$(NAME1):
+$(NAME):
 		gcc -Wall -Werror -Wextra -c $(SRC)
-		gcc -o $(NAME) $(OBJ) -L. ./libft/libft.a
+		gcc -o $(NAME) $(OBJ) -L ./libft/libft.a
 
 clean:
 		rm -f *.o
