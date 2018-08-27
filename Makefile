@@ -12,7 +12,7 @@
 
 NAME= lem_in
 
-all:	$(NAME1)
+all:	$(NAME)
 
 lib:	
 	make re -C ./libft/
