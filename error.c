@@ -14,11 +14,12 @@
 
 void	error(int x)
 {
-	char	*error[4];
+	char	*error[5];
 
 	error[0] = "Invalid ants.";
 	error[1] = "Invalid rooms.";
-	error[3] = "Start and end not valid.";
-	error[4] = "No valid path.";
+	error[2] = "Start and end not valid.";
+	error[3] = "No valid path.";
+	error[4] = "Error creating new line.";
 	ft_putendl_fd(error[x], 2);
 }

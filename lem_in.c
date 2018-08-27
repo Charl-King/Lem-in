@@ -12,15 +12,28 @@
 
 #include "lem_in.h"
 
-void	addline(t_line *list, char *str)
+t_line	*create(char *data, t_line *next)
 {
-	t_line	*new;
+	t_line* new_node;
+	
+	new_node = (t_line*)malloc(sizeof(t_line));
+	if(new_node == NULL)
+	{
+		error(4);
+	}
+	new_node->data = data;
+	new_node->next = next;
+	return(new_node);
+}
 
-	new->next = NULL;
-	new->data = str;
-	while (list->next)
-		list = list->next;
-	list->next = new;
+t_line	*append(t_line *head, char *data)
+{
+	t_line *cursor = head;
+	while(cursor->next != NULL)
+		cursor = cursor->next;
+	t_line* new_node =  create(data,NULL);
+	cursor->next = new_node;
+	return head;
 }
 
 int		main(void)
@@ -28,8 +41,8 @@ int		main(void)
 	t_line	*args;
 	char	**line;
 
-	line = malloc(10);
-	*line = malloc(10);
+	line = malloc(100);
+	*line = malloc(100);
 	while (get_next_line(0, line) > 0)
-		addline(args, *line);
+		args = append(args, *line);
 }

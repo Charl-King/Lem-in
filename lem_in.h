@@ -12,7 +12,6 @@
 
 #ifndef LEM_IN_H
 # define LEM_IN_H
-# define ERROR write(2, "Error\n", 6);
 
 # include "./libft/libft.h"
 
@@ -21,4 +20,5 @@ typedef struct	s_line
 	char			*data;
 	struct	s_line	*next;
 }				t_line;
+void	error	(int x);
 #endif
