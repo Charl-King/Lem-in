@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem_in.h                                           :+:      :+:    :+:   */
+/*   lem_in.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cking <cking@student.wethinkcode.co.za>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/27 11:32:51 by cking             #+#    #+#             */
-/*   Updated: 2018/08/27 11:32:51 by cking            ###   ########.fr       */
+/*   Created: 2018/08/27 11:39:23 by cking             #+#    #+#             */
+/*   Updated: 2018/08/27 11:39:23 by cking            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LEM_IN_H
-# define LEM_IN_H
-# define ERROR write(2, "Error\n", 6);
+#include "lem_in.h"
 
-# include "./libft/libft.h"
-
-typedef struct	s_line
+void	addline(t_line *list, char *str)
 {
-	char			*data;
-	struct	s_line	*next;
-}				t_line;
-#endif
+	t_line	*new;
+
+	new->next = NULL;
+	new->data = str;
+	while (list->next)
+		list = list->next;
+	list->next = new;
+}
+
+int		main(void)
+{
+	t_line	*args;
+	char	**line;
+
+	line = malloc(10);
+	*line = malloc(10);
+	while (get_next_line(0, line) > 0)
+		addline(args, *line);
+}

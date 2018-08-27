@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem_in.h                                           :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cking <cking@student.wethinkcode.co.za>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/27 11:32:51 by cking             #+#    #+#             */
-/*   Updated: 2018/08/27 11:32:51 by cking            ###   ########.fr       */
+/*   Created: 2018/08/27 12:14:42 by cking             #+#    #+#             */
+/*   Updated: 2018/08/27 12:14:42 by cking            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LEM_IN_H
-# define LEM_IN_H
-# define ERROR write(2, "Error\n", 6);
+#include "lem_in.h"
 
-# include "./libft/libft.h"
-
-typedef struct	s_line
+void	error(int x)
 {
-	char			*data;
-	struct	s_line	*next;
-}				t_line;
-#endif
+	char	*error[4];
+
+	error[0] = "Invalid ants.";
+	error[1] = "Invalid rooms.";
+	error[3] = "Start and end not valid.";
+	error[4] = "No valid path.";
+	ft_putendl_fd(error[x], 2);
+}
