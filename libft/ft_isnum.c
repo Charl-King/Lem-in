@@ -6,9 +6,11 @@
 /*   By: cking <cking@student.wethinkcode.co.za>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/28 16:27:05 by cking             #+#    #+#             */
-/*   Updated: 2018/08/28 16:29:14 by cking            ###   ########.fr       */
+/*   Updated: 2018/08/28 17:37:10 by cking            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_isnum(char *str)
 {
@@ -18,4 +20,5 @@ int		ft_isnum(char *str)
 	while (str[i])
 		if (!ft_isdigit(str[i++]))
 			return (0);
+	return (1);
 }
