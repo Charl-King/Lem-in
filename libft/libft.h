@@ -6,7 +6,7 @@
 /*   By: cking <cking@student.wethinkcode.co.za>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/18 13:03:16 by cking             #+#    #+#             */
-/*   Updated: 2018/08/21 10:07:46 by cking            ###   ########.fr       */
+/*   Updated: 2018/08/28 16:29:33 by cking            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ int					ft_isupper(int c);
 int					ft_islower(int c);
 int					ft_abs(int x);
 int					ft_intlen(int n);
+int					ft_wordcount(char const *s, char c);
+int					ft_isnum(char *str);
 
 #endif
 

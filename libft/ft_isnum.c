@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_isnum.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cking <cking@student.wethinkcode.co.za>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/27 12:14:42 by cking             #+#    #+#             */
-/*   Updated: 2018/08/28 16:30:23 by cking            ###   ########.fr       */
+/*   Created: 2018/08/28 16:27:05 by cking             #+#    #+#             */
+/*   Updated: 2018/08/28 16:29:14 by cking            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem_in.h"
-
-void	error(int x)
+int		ft_isnum(char *str)
 {
-	char	*error[7];
+	int i;
 
-	error[0] = "Invalid ants.";
-	error[1] = "Invalid rooms.";
-	error[2] = "Start and end not valid.";
-	error[3] = "No valid path.";
-	error[4] = "Error creating new line.";
-	error[5] = "Empty line present.";
-	error[6] = "Negative coords not allowed.";
-	ft_putendl_fd(error[x], 2);
-	exit(1);
+	i = 0;
+	while (str[i])
+		if (!ft_isdigit(str[i++]))
+			return (0);
 }

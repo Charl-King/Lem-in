@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cking <cking@student.42.fr>                +#+  +:+       +#+         #
+#    By: cking <cking@student.wethinkcode.co.za>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/04 07:59:03 by cking             #+#    #+#              #
-#    Updated: 2018/08/14 14:49:14 by cking            ###   ########.fr        #
+#    Updated: 2018/08/28 16:29:43 by cking            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ SRC=ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c \
     ft_putstr.c ft_putendl.c ft_putnbr.c ft_putchar_fd.c ft_putstr_fd.c \
     ft_putendl_fd.c ft_putnbr_fd.c ft_isspace.c ft_isupper.c ft_intlen.c \
 	ft_strlcat.c ft_strdel.c ft_strnew.c ft_islower.c ft_abs.c \
-	get_next_line.c
+	get_next_line.c ft_wordcount.c ft_isnum.c
 
 OBJ=$(SRC:.c=.o)
 
