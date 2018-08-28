@@ -28,19 +28,63 @@ t_line	*create(char *data, t_line *next)
 
 t_line	*append(t_line *head, char *data)
 {
-	t_line *cursor = head;
+	t_line *cursor;
+	
+	cursor = head;
 	if (!cursor)
-	{
 		create(data, NULL);
-	}
 	else
 	{
 		while(cursor->next != NULL)
-		cursor = cursor->next;
+			cursor = cursor->next;
 		t_line* new_node =  create(data,NULL);
 		cursor->next = new_node;
 	}
 	return (head);
+}
+
+void	check_ants(t_line *args)
+{
+	char *temp;
+
+	temp = ft_itoa(args->data);
+	if(!ft_strequ(args->data,ft_itoa(temp)) && temp > 0)
+		error(0);
+	free(temp);
+}
+
+int		isroom(char *line)
+{
+
+}
+
+void	check_rooms(t_line *args)
+{
+	t_line	*cursor;
+	int		check;
+	
+	cursor = args->next;
+	check = 0;
+	while (cursor->data[0])
+	{
+		if (cursor->data[0] == '#')
+			cursor = cursor->next;
+		else
+		{
+			if (isroom(cursor->data))
+			{
+				cursor = cursor->next;
+				check++;
+			}
+		}
+	}
+	if (!check)
+		error(1);
+}
+
+int		valid(char *line)
+{
+	
 }
 
 int		main(void)
@@ -51,5 +95,8 @@ int		main(void)
 	line = malloc(100);
 	*line = malloc(100);
 	while (get_next_line(0, line) > 0)
-		args = append(args, *line);
+		if (valid(*line))
+			args = append(args, *line);
+	check_ants(args);
+	check_rooms(args);
 }
