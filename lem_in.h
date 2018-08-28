@@ -24,5 +24,8 @@ typedef struct	s_line
 void	error(int x);
 t_line	*append(t_line *head, char *data);
 t_line	*create(char *data, t_line *next);
+void	check_ants(t_line *args);
+int		is_room(char *str);
+int		validate_room(char *str);
 
 #endif

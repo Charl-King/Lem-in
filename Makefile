@@ -18,7 +18,7 @@ lib:
 	make re -C ./libft/
 	make clean -C ./libft/
 
-SRC= error.c lem_in.c list_functions.c
+SRC= error.c lem_in.c list_functions.c ants.c rooms.c
 
 OBJ= $(SRC:.c=.o)
 
