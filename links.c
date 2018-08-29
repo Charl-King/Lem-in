@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ants.c                                             :+:      :+:    :+:   */
+/*   links.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cking <cking@student.wethinkcode.co.za>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/28 19:16:49 by cking             #+#    #+#             */
-/*   Updated: 2018/08/29 12:15:17 by cking            ###   ########.fr       */
+/*   Created: 2018/08/29 10:20:10 by cking             #+#    #+#             */
+/*   Updated: 2018/08/29 13:54:37 by cking            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void	check_ants(t_line *args)
+int		is_link(char *str)
 {
-	char *temp;
+	int wc;
 
-	temp = ft_itoa(ft_atoi(args->data));
-	if (!ft_strequ(args->data, temp) || ft_atoi(args->data) < 1)
-		error(0);
-	free(temp);
+	wc = ft_wordcount(str, '-');
+	if (wc == 2 && str[0] != '#')
+		return (1);
+	return (0);
+}
+
+int		validate_link(t_map *map, char *str)
+{
+	char **temp;
+
+	temp = ft_strsplit(str, '-');
+	if (room_exist(map, temp[0]) && room_exist(map, temp[1]))
+		return (1);
+	else
+		error(10);
+	return (0);
 }

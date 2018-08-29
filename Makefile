@@ -6,7 +6,7 @@
 #    By: cking <cking@student.wethinkcode.co.za>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/27 13:18:20 by cking             #+#    #+#              #
-#    Updated: 2018/08/28 17:34:05 by cking            ###   ########.fr        #
+#    Updated: 2018/08/29 12:03:51 by cking            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ lib:
 	make re -C ./libft/
 	make clean -C ./libft/
 
-SRC= error.c lem_in.c list_functions.c ants.c rooms.c
+SRC= error.c lem_in.c list_functions.c ants.c rooms.c links.c comments.c commands.c
 
 OBJ= $(SRC:.c=.o)
 
