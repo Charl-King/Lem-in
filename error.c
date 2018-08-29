@@ -6,7 +6,7 @@
 /*   By: cking <cking@student.wethinkcode.co.za>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/27 12:14:42 by cking             #+#    #+#             */
-/*   Updated: 2018/08/29 13:49:01 by cking            ###   ########.fr       */
+/*   Updated: 2018/08/29 16:50:34 by cking            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	error(int x)
 {
-	char	*error[11];
+	char	*error[12];
 
 	error[0] = "Invalid ants.";
 	error[1] = "Invalid rooms.";
@@ -27,6 +27,7 @@ void	error(int x)
 	error[8] = "Invalid start/end room.";
 	error[9] = "Error creating room.";
 	error[10] = "Invalid link";
+	error[11] = "Empty file.";
 	ft_putendl_fd(error[x], 2);
 	exit(1);
 }

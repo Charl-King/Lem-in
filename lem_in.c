@@ -6,7 +6,7 @@
 /*   By: cking <cking@student.wethinkcode.co.za>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/27 11:39:23 by cking             #+#    #+#             */
-/*   Updated: 2018/08/29 14:44:45 by cking            ###   ########.fr       */
+/*   Updated: 2018/08/29 17:25:05 by cking            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,9 @@ void	validate_args(t_map *map, t_line *args)
 			map->room = add_room(map->room, get_room_name(cursor->data));
 		}
 		else if (is_link(cursor->data))
-		{
-			if (map->roomcount < 1)
-				error(1);
-			validate_link(map, cursor->data);
-		}
+			map->roomcount < 1 ? error(1) : validate_link(map, cursor->data);
+		else if (map->ants != 1 && is_ants(cursor->data))
+			skip();
 		else if (is_comment(cursor->data))
 			skip();
 		else if (is_command(cursor->data))
@@ -78,7 +76,7 @@ int		main(void)
 	*line = malloc(100);
 	while (get_next_line(0, line) > 0)
 		args = append(args, *line);
-	check_ants(args);
+	check_ants(&map, args);
 	validate_args(&map, args);
 	if (!map.start || !map.end)
 		error(8);
