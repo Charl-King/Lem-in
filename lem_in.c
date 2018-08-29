@@ -6,7 +6,7 @@
 /*   By: cking <cking@student.wethinkcode.co.za>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/27 11:39:23 by cking             #+#    #+#             */
-/*   Updated: 2018/08/29 14:28:13 by cking            ###   ########.fr       */
+/*   Updated: 2018/08/29 14:44:45 by cking            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,8 @@ int		main(void)
 	if (!map.start || !map.end)
 		error(8);
 	print_args(args);
+	ft_putendl("");
+	ft_putstr("L1-");
+	ft_putendl(map.room->next->name);
 	exit(0);
 }

@@ -6,13 +6,13 @@
 #    By: cking <cking@student.wethinkcode.co.za>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/27 13:18:20 by cking             #+#    #+#              #
-#    Updated: 2018/08/29 12:03:51 by cking            ###   ########.fr        #
+#    Updated: 2018/08/29 14:48:49 by cking            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= lem_in
+NAME= lem-in
 
-all:	$(NAME)
+all:	lib $(NAME)
 
 lib:	
 	make re -C ./libft/
